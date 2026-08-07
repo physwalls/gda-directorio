@@ -5,8 +5,7 @@ export const gdaRoster = [
     heroName: "Invincible",
     status: "Activo",
     threatLevel: "Alto",
-    imageUrl:
-      "https://via.placeholder.com/250x150/FFDD00/000000?text=Invincible",
+    imageUrl: "/images/invincible.jpg",
   },
   {
     id: 2,
@@ -14,7 +13,7 @@ export const gdaRoster = [
     heroName: "Atom Eve",
     status: "Activo",
     threatLevel: "Alto",
-    imageUrl: "https://via.placeholder.com/250x150/FF69B4/FFFFFF?text=Atom+Eve",
+    imageUrl: "/images/atom_eve.jpg",
   },
   {
     id: 3,
@@ -22,6 +21,6 @@ export const gdaRoster = [
     heroName: "Omni-Man",
     status: "Desaparecido",
     threatLevel: "Nivel Viltrumita",
-    imageUrl: "https://via.placeholder.com/250x150/DF0000/FFFFFF?text=Omni-Man",
+    imageUrl: "/images/omni_man.jpg",
   },
 ];

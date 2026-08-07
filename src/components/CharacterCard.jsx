@@ -1,3 +1,30 @@
+const cardStyle = {
+  border: "2px solid #222",
+  padding: "16px",
+  margin: "10px",
+  borderRadius: "8px",
+  width: "250px",
+  backgroundColor: "#f5f5f5",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  color: "#333",
+};
+
+const imageStyle = {
+  width: "100%",
+  maxHeight: "180px",
+  objectFit: "cover",
+  borderRadius: "4px",
+  marginBottom: "12px",
+};
+
+const titleStyle = {
+  color: "#d9534f",
+  marginTop: "0",
+  fontSize: "1.4rem",
+};
+
 export const CharacterCard = ({
   name,
   heroName,
@@ -6,25 +33,10 @@ export const CharacterCard = ({
   imageUrl,
 }) => {
   return (
-    <div
-      style={{
-        border: "2px solid #222",
-        padding: "16px",
-        margin: "10px",
-        borderRadius: "8px",
-        width: "250px",
-        backgroundColor: "#f5f5f5",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <img
-        src={imageUrl}
-        alt={`Fotografía de archivo de ${heroName}`}
-        style={{ width: "100%", borderRadius: "4px", marginBottom: "12px" }}
-      />
+    <div style={cardStyle}>
+      <img src={imageUrl} alt={`Perfil de ${heroName}`} style={imageStyle} />
 
-      <h2 style={{ color: "#d9534f", marginTop: "0" }}>{heroName}</h2>
+      <h2 style={titleStyle}>{heroName}</h2>
       <hr style={{ borderColor: "#ccc", width: "100%" }} />
       <p>
         <strong>Identidad Real:</strong> {name}
