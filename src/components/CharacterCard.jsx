@@ -1,19 +1,8 @@
-const cardStyle = {
-  border: "2px solid #222",
-  padding: "16px",
-  margin: "10px",
-  borderRadius: "8px",
-  width: "250px",
-  backgroundColor: "#f5f5f5",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  color: "#333",
-};
+import "./CharacterCard.css";
 
 const imageStyle = {
   width: "100%",
-  maxHeight: "180px",
+  maxHeight: "200px",
   objectFit: "cover",
   borderRadius: "4px",
   marginBottom: "12px",
@@ -33,7 +22,7 @@ export const CharacterCard = ({
   imageUrl,
 }) => {
   return (
-    <div style={cardStyle}>
+    <div className="character-card">
       <img src={imageUrl} alt={`Perfil de ${heroName}`} style={imageStyle} />
 
       <h2 style={titleStyle}>{heroName}</h2>
