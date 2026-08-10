@@ -1,10 +1,10 @@
+// src/App.jsx
 import { useState } from "react";
 import { gdaRoster } from "./data/gdaRoster";
 import { CharacterCard } from "./components/CharacterCard";
 
 export default function App() {
   const [roster, setRoster] = useState(gdaRoster);
-
   const [searchTerm, setSearchTerm] = useState("");
   const [threatFilter, setThreatFilter] = useState("Todos");
   const [statusFilter, setStatusFilter] = useState("Todos");
@@ -17,58 +17,73 @@ export default function App() {
       threatFilter === "Todos" || character.threatLevel === threatFilter;
     const matchesStatus =
       statusFilter === "Todos" || character.status === statusFilter;
-
     return matchesSearch && matchesThreat && matchesStatus;
   });
+
+  const inputStyle = {
+    padding: "12px",
+    borderRadius: "6px",
+    border: "2px solid #0052CC",
+    backgroundColor: "#1e293b",
+    color: "white",
+    outline: "none",
+    fontSize: "1rem",
+  };
 
   return (
     <div
       style={{
         padding: "20px",
-        fontFamily: "sans-serif",
-        backgroundColor: "#47b2ff",
-        color: "black",
+        fontFamily: "system-ui, sans-serif",
+        backgroundColor: "#0b132b",
+        color: "#e2e8f0",
         minHeight: "100vh",
       }}
     >
-      <h1>Base de Datos GDA</h1>
-      <p>Nivel de Autorización: Máximo</p>
+      <div style={{ textAlign: "center", marginBottom: "30px" }}>
+        <h1
+          style={{
+            color: "#FFC500",
+            textTransform: "uppercase",
+            letterSpacing: "2px",
+            margin: "20px 0",
+          }}
+        >
+          BASE DE DATOS GDA
+        </h1>
+        <p
+          style={{
+            color: "#E53935",
+            fontWeight: "bold",
+            letterSpacing: "1px",
+            margin: "5px",
+          }}
+        >
+          NIVEL DE AUTORIZACIÓN: MÁXIMO
+        </p>
+      </div>
 
       <div
         style={{
           display: "flex",
           gap: "15px",
-          marginBottom: "20px",
+          marginBottom: "30px",
           flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
         <input
           type="text"
-          placeholder="Buscar por nombre..."
+          placeholder="Buscar héroe..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={{
-            padding: "12px",
-            width: "100%",
-            maxWidth: "300px",
-            borderRadius: "6px",
-            border: "none",
-            outline: "none",
-            fontSize: "1rem",
-          }}
+          style={{ ...inputStyle, width: "100%", maxWidth: "300px" }}
         />
 
         <select
           value={threatFilter}
           onChange={(e) => setThreatFilter(e.target.value)}
-          style={{
-            padding: "12px",
-            borderRadius: "6px",
-            border: "none",
-            outline: "none",
-            fontSize: "1rem",
-            cursor: "pointer",
-          }}
+          style={{ ...inputStyle, cursor: "pointer" }}
         >
           <option value="Todos">Todos los niveles</option>
           <option value="Medio">Medio</option>
@@ -79,14 +94,7 @@ export default function App() {
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
-          style={{
-            padding: "12px",
-            borderRadius: "6px",
-            border: "none",
-            outline: "none",
-            fontSize: "1rem",
-            cursor: "pointer",
-          }}
+          style={{ ...inputStyle, cursor: "pointer" }}
         >
           <option value="Todos">Todos los estados</option>
           <option value="Activo">Activo</option>
@@ -98,16 +106,17 @@ export default function App() {
       {filteredRoster.length === 0 ? (
         <div
           style={{
-            backgroundColor: "#d9534f",
+            backgroundColor: "rgba(229, 57, 53, 0.2)",
+            border: "2px solid #E53935",
             color: "white",
             padding: "20px",
             borderRadius: "8px",
             textAlign: "center",
-            marginTop: "40px",
+            margin: "40px auto",
             maxWidth: "600px",
           }}
         >
-          <h2> Sin Resultados </h2>
+          <h2 style={{ color: "#E53935" }}>⚠️ ALERTA DEL SISTEMA</h2>
           <p>
             No se encontraron coincidencias en la base de datos de la GDA con
             los filtros seleccionados.

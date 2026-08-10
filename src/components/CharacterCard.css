@@ -1,17 +1,13 @@
 .character-card {
-  border: 2px solid #222;
+  border: 2px solid #0052cc;
   padding: 16px;
-  border-radius: 8px;
-  background-color: #f5f5f5;
-  color: #333;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  color: #e2e8f0;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* entrada */
   animation: aparecer 0.5s ease-out forwards;
-
-  /* transicion */
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -19,14 +15,36 @@
   cursor: pointer;
 }
 
-/* efecto mouse */
 .character-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
-  border-color: #d9534f;
+  border-color: #ffc500;
+  box-shadow: 0 12px 24px rgba(255, 197, 0, 0.25);
 }
 
-/* animacion entrada */
+.character-card h2 {
+  color: #ffc500;
+  margin-top: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.character-card hr {
+  border-color: #e53935;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.character-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 2px solid #1e293b;
+}
+
 @keyframes aparecer {
   from {
     opacity: 0;

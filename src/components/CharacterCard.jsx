@@ -1,19 +1,5 @@
 import "./CharacterCard.css";
 
-const imageStyle = {
-  width: "100%",
-  maxHeight: "200px",
-  objectFit: "cover",
-  borderRadius: "4px",
-  marginBottom: "12px",
-};
-
-const titleStyle = {
-  color: "#d9534f",
-  marginTop: "0",
-  fontSize: "1.4rem",
-};
-
 export const CharacterCard = ({
   name,
   heroName,
@@ -23,10 +9,10 @@ export const CharacterCard = ({
 }) => {
   return (
     <div className="character-card">
-      <img src={imageUrl} alt={`Perfil de ${heroName}`} style={imageStyle} />
+      <img src={imageUrl} alt={`Perfil de ${heroName}`} />
 
-      <h2 style={titleStyle}>{heroName}</h2>
-      <hr style={{ borderColor: "#ccc", width: "100%" }} />
+      <h2>{heroName}</h2>
+      <hr />
       <p>
         <strong>Identidad Real:</strong> {name}
       </p>
